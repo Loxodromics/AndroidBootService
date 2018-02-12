@@ -103,6 +103,7 @@ public class MyJobIntentService extends JobIntentService {
                 .setContentTitle("Title") /// first row
                 .setContentText(contentText) /// second row
                 .setContentIntent(contentIntent) /// the intent to launch when touched
+                .setSmallIcon(R.drawable.ic_launcher_foreground)
                 .setChannelId(MainActivity.CHANNEL_ID)
                 .setAutoCancel(true)
                 .build();

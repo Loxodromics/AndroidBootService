@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
     /// Notification Channel for Version O and higher
     private void createChannel() {
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            NotificationManager nm = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+            NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
             NotificationChannel channel = new NotificationChannel(CHANNEL_ID,
                     "Boot Service Channel",
                     NotificationManager.IMPORTANCE_DEFAULT);
@@ -44,8 +44,7 @@ public class MainActivity extends AppCompatActivity {
             channel.enableVibration(true);
             channel.setShowBadge(true);
             channel.setVibrationPattern(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400});
-            nm.createNotificationChannel(channel);
-
+            notificationManager.createNotificationChannel(channel);
         }
     }
 }
