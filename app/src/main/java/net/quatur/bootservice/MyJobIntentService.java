@@ -34,7 +34,7 @@ public class MyJobIntentService extends JobIntentService {
         int notificationId = 1;
         while(true) {
             setNotification(getApplicationContext(), notificationId);
-            Log.wtf(TAG, "set notification");
+            Log.d(TAG, "set notification");
             try {
                 Thread.sleep(60000); /// do something every minute
             } catch (InterruptedException e) {
