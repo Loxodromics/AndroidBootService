@@ -42,25 +42,6 @@ public class MyJobIntentService extends JobIntentService {
         }
     }
 
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        toast("MyJobIntentService onDestroy");
-    }
-
-    final Handler mHandler = new Handler();
-
-    /// Helper for showing tests
-    void toast(final CharSequence text) {
-        mHandler.post(new Runnable() {
-            @Override
-            public void run() {
-                Toast.makeText(MyJobIntentService.this, text, Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
-
-
     public void setNotification(Context context, int notificationId) {
 
         String contentText = "error";
@@ -103,7 +84,7 @@ public class MyJobIntentService extends JobIntentService {
                 .setContentTitle("Title") /// first row
                 .setContentText(contentText) /// second row
                 .setContentIntent(contentIntent) /// the intent to launch when touched
-                .setSmallIcon(R.drawable.ic_launcher_foreground)
+                .setSmallIcon(R.drawable.ic_launcher_foreground) /// without it, System UI crashes on version O
                 .setChannelId(MainActivity.CHANNEL_ID)
                 .setAutoCancel(true)
                 .build();

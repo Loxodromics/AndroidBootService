@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
             channel.setDescription("Boot Service Channel Description");
             channel.enableLights(true);
             // Sets the notification light color for notifications posted to this channel, if the device supports this feature.
-            channel.setLightColor(Color.RED);
+            channel.setLightColor(Color.BLUE);
             channel.enableVibration(true);
             channel.setShowBadge(true);
             channel.setVibrationPattern(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400});
